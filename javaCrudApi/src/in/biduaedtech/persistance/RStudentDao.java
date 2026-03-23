@@ -15,4 +15,7 @@ public interface RStudentDao {
 
     public String deleteStudent(Integer sid) 
             throws SQLException, ClassNotFoundException;
+
+	String updateStudent(Integer sid, String sname, Integer sage, String saddress)
+			throws SQLException, ClassNotFoundException;
 }

@@ -62,8 +62,7 @@ public class StudentDaoimpl implements RStudentDao {
         }
     }
 
-    @Override
-    public String updateStudent(String sname, Integer sage, String saddress) throws SQLException, ClassNotFoundException {
+    public String updateStudent(Integer sid,String sname, Integer sage, String saddress) throws SQLException, ClassNotFoundException {
     	
     	 Connection con = DBConnection.getConnection();
         
@@ -73,6 +72,7 @@ public class StudentDaoimpl implements RStudentDao {
         ps.setString(1, sname);
         ps.setInt(2, sage);
         ps.setString(3, saddress);
+        ps.setInt(4, sid);
         
         int row = ps.executeUpdate();
 
@@ -99,4 +99,11 @@ public class StudentDaoimpl implements RStudentDao {
     	    else
     	        return "fail";
     }
+
+	@Override
+	public String updateStudent(String sname, Integer sage, String saddress)
+			throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
